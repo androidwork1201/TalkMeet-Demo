@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_inner_page"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/focus_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/focus_toolbar"
+        app:layout_constraintVertical_bias="0.0">
+
+        <com.ortiz.touchview.TouchImageView
+            android:id="@+id/image_focus_post"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintBottom_toTopOf="@+id/image_focus_user_pics"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.333"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/image_focus_user_pics"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/image_poster_pics"
+            app:layout_constraintBottom_toTopOf="@+id/text_post_scroll"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/txt_focus_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="User"
+            android:textColor="#FFF"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/image_focus_user_pics"
+            app:layout_constraintStart_toEndOf="@+id/image_focus_user_pics"
+            app:layout_constraintTop_toTopOf="@+id/image_focus_user_pics" />
+
+        <TextView
+            android:id="@+id/text_focus_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="#B8B8B8"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_focus_name"
+            app:layout_constraintStart_toEndOf="@+id/txt_focus_name"
+            app:layout_constraintTop_toTopOf="@+id/txt_focus_name" />
+
+        <ScrollView
+            android:id="@+id/text_post_scroll"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="12dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/text_focus_post"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginBottom="8dp"
+                android:text="Post"
+                android:textColor="#FFF"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/text_input"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_weight="8"
+                android:background="@drawable/edit_text_view_redius"
+                android:gravity="center_vertical|left"
+                android:inputType="textPersonName"
+                android:text="  偷偷回復他..."
+                android:textColor="#000"
+                android:textSize="12sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <ImageView
+                android:id="@+id/image_favorite"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_weight="0.5"
+                android:src="@drawable/ic_baseline_favorite_24" />
+
+            <TextView
+                android:id="@+id/text_focus_favorite"
+                android:layout_width="0dp"
+                android:layout_height="15dp"
+                android:layout_weight="0.3"
+                android:textColor="#FFF"
+                android:textSize="10sp" />
+
+            <ImageView
+                android:id="@+id/image_chat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:src="@drawable/ic_baseline_chat_24" />
+
+            <TextView
+                android:id="@+id/text_focus_chat"
+                android:layout_width="0dp"
+                android:layout_height="15dp"
+                android:layout_weight="0.3"
+                android:textColor="#FFF"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

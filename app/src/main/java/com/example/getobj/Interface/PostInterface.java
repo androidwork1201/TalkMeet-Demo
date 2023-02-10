@@ -1,4 +1,6 @@
-package com.example.getobj;
+package com.example.getobj.Interface;
+
+import com.example.getobj.GsonData;
 
 import java.util.List;
 
@@ -21,5 +23,4 @@ public interface PostInterface {
             @Field("page") int page,
             @Field("type") int type);
 
-//    xTcCQOIgNvXvJVdfTYQQDU5RMBdvI3Gb
 }
